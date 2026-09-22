@@ -35,12 +35,12 @@
         .anim-pulse { animation: pulse-soft 3s ease-in-out infinite; }
 
         .glass-card {
-            background: rgba(249, 241, 219, 0.9);
+            background: rgba(249, 241, 219, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid #EFCBD2;
-            box-shadow: 0 20px 50px -10px rgba(175, 135, 122, 0.2), 
-                        inset 0 2px 10px rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(239, 203, 210, 0.8);
+            box-shadow: 0 20px 50px -10px rgba(175, 135, 122, 0.15), 
+                        inset 0 2px 10px rgba(255, 255, 255, 0.5);
         }
 
         .virtual-card {
@@ -57,23 +57,56 @@
             width: 0px;
         }
     </style>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#F9F1DB',
+                            100: '#f3e8c7',
+                            200: '#ebd9aa',
+                        },
+                        brown: {
+                            300: '#c5a396',
+                            400: '#ba9588',
+                            500: '#AF877A', // Rilakkuma Brown
+                            600: '#8c6a5e',
+                        },
+                        pink: {
+                            50: '#fcf2f4',
+                            100: '#EFCBD2', // Blush Pink
+                            200: '#f5abbb',
+                            300: '#f28da3',
+                            400: '#F48FB1',
+                            500: '#EF98B4', // Sakura Pink
+                        },
+                        mint: {
+                            500: '#C8E0DA', // Mint Aqua
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="flex flex-col items-center py-6 px-4 text-[#AF877A] relative overflow-x-hidden">
+<body class="flex flex-col items-center py-6 px-4 text-brown-500 relative overflow-x-hidden">
 
     <!-- Background Decorative SVGs -->
     <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <svg class="absolute top-[5%] left-[10%] w-8 h-8 text-[#EF98B4] anim-float-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-        <svg class="absolute top-[15%] left-[2%] w-6 h-6 text-[#C8E0DA] anim-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <svg class="absolute top-[10%] right-[8%] w-10 h-10 text-[#EFCBD2] anim-float-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <svg class="absolute bottom-[10%] left-[10%] w-8 h-8 text-[#C8E0DA] anim-float-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <svg class="absolute top-[5%] left-[10%] w-8 h-8 text-pink-500 anim-float-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        <svg class="absolute top-[15%] left-[2%] w-6 h-6 text-mint-500 anim-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <svg class="absolute top-[10%] right-[8%] w-10 h-10 text-pink-100 anim-float-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <svg class="absolute bottom-[10%] left-[10%] w-8 h-8 text-mint-500 anim-float-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
     </div>
 
     <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-[#AF877A] text-[#F9F1DB] px-6 py-3 rounded-full shadow-xl transition-all duration-300 opacity-0 translate-y-4 pointer-events-none z-50 flex items-center gap-2 font-medium text-sm border border-[#EFCBD2]">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-[#EFCBD2]">
+    <div id="toast" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-brown-500/95 backdrop-blur-sm text-cream-50 px-6 py-3 rounded-full shadow-xl transition-all duration-300 opacity-0 translate-y-4 pointer-events-none z-50 flex items-center gap-2 font-medium text-sm border border-brown-300">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-pink-100">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        คัดลอกข้อความแล้วค่า 💖
+        คัดลอกข้อความแล้ว 💖
     </div>
 
     <!-- Container หลัก -->
@@ -81,21 +114,21 @@
         
         <!-- Header -->
         <div class="text-center pt-2 pb-1 relative">
-            <h1 class="text-2xl font-bold tracking-tight text-[#EF98B4] flex items-center justify-center gap-2 drop-shadow-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-[#EF98B4] anim-pulse">
+            <h1 class="text-2xl font-bold tracking-tight text-pink-500 flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-pink-500 anim-pulse">
                     <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
                 </svg>
                 LUCKY ILY
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-[#EF98B4] anim-pulse transform -scale-x-100">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-pink-500 anim-pulse transform -scale-x-100">
                     <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
                 </svg>
             </h1>
-            <p class="text-sm font-medium text-[#AF877A] mt-0.5">กล่องสุ่มปริศนา ? ราคาถู๊กถูก คุ้มสุดๆ</p>
+            <p class="text-sm font-medium text-brown-400 mt-0.5">กล่องสุ่มปริศนา ? ราคาถู๊กถูก คุ้มสุดๆ</p>
         </div>
 
         <!-- ภาพแรกล่างชื่อร้าน (แสดงเต็มรูป) -->
         <div class="w-full px-1">
-            <div class="w-full bg-[#F9F1DB] p-2 rounded-[28px] border-2 border-[#EFCBD2] shadow-sm flex items-center justify-center">
+            <div class="w-full bg-[#F9F1DB] p-2 rounded-[28px] border border-[#EFCBD2] shadow-sm flex items-center justify-center">
                 <img src="https://lh3.googleusercontent.com/d/1LAdROryQK2yEXfi7TSG1leMqhLNepXm3" alt="Banner ร้าน" class="w-full h-auto object-contain rounded-2xl">
             </div>
         </div>
@@ -104,19 +137,19 @@
         <div class="glass-card rounded-[40px] p-4 relative z-10 space-y-6">
             
             <!-- กล่องสำคัญควรอ่าน -->
-            <div class="relative bg-gradient-to-br from-[#EFCBD2] to-[#F9F1DB] rounded-[24px] p-4 border-2 border-dashed border-[#EF98B4] shadow-sm overflow-hidden">
+            <div class="relative bg-gradient-to-br from-[#EFCBD2]/60 to-[#F9F1DB] rounded-[24px] p-4 border-2 border-dashed border-[#EF98B4] shadow-sm overflow-hidden">
                 <div class="flex items-start gap-3 relative z-10">
                     <div class="bg-[#EF98B4] p-1.5 rounded-full shadow-md text-white flex-shrink-0 mt-0.5 animate-bounce">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-3.5 h-3.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                         </svg>
                     </div>
-                    <div class="text-[12px] text-[#AF877A] leading-relaxed text-left flex-1">
+                    <div class="text-[12px] text-brown-500 leading-relaxed text-left flex-1">
                         <span class="inline-block bg-[#EF98B4] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full mb-1 tracking-wider shadow-sm">
                             สำคัญควรอ่าน (อ่านให้ครบ)
                         </span>
-                        <p class="font-bold text-[#EF98B4] mt-1">ยอมรับกฎและการสุ่ม = ชำระยอด</p>
-                        <p class="text-[#AF877A] mt-0.5 text-[11.5px]">หากไม่ชอบความเสี่ยงหรือการสุ่ม ห้ามสั่งซื้อรายการนี้!</p>
+                        <p class="font-bold text-pink-500 mt-1">ยอมรับกฎและการสุ่ม = ชำระยอด</p>
+                        <p class="text-brown-400 mt-0.5 text-[11.5px]">หากไม่ชอบความเสี่ยงหรือการสุ่ม ห้ามสั่งซื้อรายการนี้!</p>
                     </div>
                 </div>
             </div>
@@ -124,49 +157,49 @@
             <!-- หมวดที่ 1: สติกเกอร์ / ธีม / เมโลดี้ -->
             <div class="space-y-3">
                 <div class="flex items-center justify-between px-1">
-                    <h3 class="font-bold text-[#EF98B4] text-sm flex items-center gap-1.5">
+                    <h3 class="font-bold text-pink-500 text-sm flex items-center gap-1.5">
                         <svg class="w-4 h-4 text-[#EF98B4] anim-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                         หมวดสติกเกอร์ / ธีม / เมโลดี้
                     </h3>
                 </div>
 
                 <!-- ภาพที่ 2 สำหรับหมวดนี้ (แสดงเต็มรูป) -->
-                <div class="w-full bg-[#F9F1DB] p-2 rounded-2xl border-2 border-[#EFCBD2] shadow-sm flex items-center justify-center">
+                <div class="w-full bg-[#F9F1DB] p-2 rounded-2xl border border-[#EFCBD2] shadow-sm flex items-center justify-center">
                     <img src="https://lh3.googleusercontent.com/d/1FK7Va-IT2D1qxLMyEQxTdU4Jbcu5ozX2" alt="ภาพตัวอย่างสติกเกอร์และธีม" class="w-full h-auto object-contain rounded-xl">
                 </div>
 
                 <!-- รายการกล่องสุ่ม -->
                 <div class="grid grid-cols-1 gap-2 pt-1">
-                    <div onclick="copyText('STK / กล่องสุ่ม A 49.-', this)" class="virtual-card bg-[#F9F1DB] border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
-                        <span class="font-bold text-[#AF877A] text-sm">STK / กล่องสุ่ม A</span>
-                        <span class="bg-[#EFCBD2] text-[#EF98B4] font-bold px-3 py-1 rounded-xl text-xs border border-[#EF98B4] flex items-center gap-1">
-                            49.- <span class="text-[10px] font-normal opacity-90">(จิ้มคัดลอก)</span>
+                    <div onclick="copyText('STK / กล่องสุ่ม A 49.-', this)" class="virtual-card bg-white/90 border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
+                        <span class="font-bold text-brown-500 text-sm">STK / กล่องสุ่ม A</span>
+                        <span class="bg-[#EFCBD2]/40 text-pink-500 font-bold px-3 py-1 rounded-xl text-xs border border-[#EFCBD2] flex items-center gap-1">
+                            49.- <span class="text-[10px] font-normal opacity-75">(จิ้มคัดลอก)</span>
                         </span>
                     </div>
 
-                    <div onclick="copyText('STK / กล่องสุ่ม B 49.-', this)" class="virtual-card bg-[#F9F1DB] border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
-                        <span class="font-bold text-[#AF877A] text-sm">STK / กล่องสุ่ม B</span>
-                        <span class="bg-[#EFCBD2] text-[#EF98B4] font-bold px-3 py-1 rounded-xl text-xs border border-[#EF98B4] flex items-center gap-1">
-                            49.- <span class="text-[10px] font-normal opacity-90">(จิ้มคัดลอก)</span>
+                    <div onclick="copyText('STK / กล่องสุ่ม B 49.-', this)" class="virtual-card bg-white/90 border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
+                        <span class="font-bold text-brown-500 text-sm">STK / กล่องสุ่ม B</span>
+                        <span class="bg-[#EFCBD2]/40 text-pink-500 font-bold px-3 py-1 rounded-xl text-xs border border-[#EFCBD2] flex items-center gap-1">
+                            49.- <span class="text-[10px] font-normal opacity-75">(จิ้มคัดลอก)</span>
                         </span>
                     </div>
 
-                    <div onclick="copyText('STK / กล่องสุ่ม C 60.-', this)" class="virtual-card bg-[#F9F1DB] border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
-                        <span class="font-bold text-[#AF877A] text-sm">STK / กล่องสุ่ม C</span>
-                        <span class="bg-[#EFCBD2] text-[#EF98B4] font-bold px-3 py-1 rounded-xl text-xs border border-[#EF98B4] flex items-center gap-1">
-                            60.- <span class="text-[10px] font-normal opacity-90">(จิ้มคัดลอก)</span>
+                    <div onclick="copyText('STK / กล่องสุ่ม C 60.-', this)" class="virtual-card bg-white/90 border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
+                        <span class="font-bold text-brown-500 text-sm">STK / กล่องสุ่ม C</span>
+                        <span class="bg-[#EFCBD2]/40 text-pink-500 font-bold px-3 py-1 rounded-xl text-xs border border-[#EFCBD2] flex items-center gap-1">
+                            60.- <span class="text-[10px] font-normal opacity-75">(จิ้มคัดลอก)</span>
                         </span>
                     </div>
 
-                    <div onclick="copyText('STK / กล่องสุ่ม D 70.-', this)" class="virtual-card bg-[#F9F1DB] border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
-                        <span class="font-bold text-[#AF877A] text-sm">STK / กล่องสุ่ม D</span>
-                        <span class="bg-[#EFCBD2] text-[#EF98B4] font-bold px-3 py-1 rounded-xl text-xs border border-[#EF98B4] flex items-center gap-1">
-                            70.- <span class="text-[10px] font-normal opacity-90">(จิ้มคัดลอก)</span>
+                    <div onclick="copyText('STK / กล่องสุ่ม D 70.-', this)" class="virtual-card bg-white/90 border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
+                        <span class="font-bold text-brown-500 text-sm">STK / กล่องสุ่ม D</span>
+                        <span class="bg-[#EFCBD2]/40 text-pink-500 font-bold px-3 py-1 rounded-xl text-xs border border-[#EFCBD2] flex items-center gap-1">
+                            70.- <span class="text-[10px] font-normal opacity-75">(จิ้มคัดลอก)</span>
                         </span>
                     </div>
                 </div>
 
-                <p class="text-center text-[11.5px] text-[#AF877A] pt-1">หลังจากชำระยอดการสั่งซื้อ รอรับกล่องสุ่ม 5-15 น. ค่า</p>
+                <p class="text-center text-[11.5px] text-brown-400 pt-1">หลังจากชำระยอดการสั่งซื้อ รอรับกล่องสุ่ม 5-15 น. ค่า</p>
             </div>
 
             <!-- Divider -->
@@ -175,55 +208,55 @@
             <!-- หมวดที่ 2: อิโมจิคู่กับอะไรดี ? -->
             <div class="space-y-3">
                 <div class="flex items-center justify-between px-1">
-                    <h3 class="font-bold text-[#EF98B4] text-sm flex items-center gap-1.5">
+                    <h3 class="font-bold text-pink-500 text-sm flex items-center gap-1.5">
                         <svg class="w-4 h-4 text-[#EF98B4] anim-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                         หมวดอิโมจิคู่กับอะไรดี ?
                     </h3>
                 </div>
 
                 <!-- ภาพที่ 3 สำหรับหมวดนี้ (แสดงเต็มรูป) -->
-                <div class="w-full bg-[#F9F1DB] p-2 rounded-2xl border-2 border-[#EFCBD2] shadow-sm flex items-center justify-center">
+                <div class="w-full bg-[#F9F1DB] p-2 rounded-2xl border border-[#EFCBD2] shadow-sm flex items-center justify-center">
                     <img src="https://lh3.googleusercontent.com/d/12HnV1tJ0uVQ_zxdgQPJncUSJZVeqTE27" alt="ภาพตัวอย่างอิโมจิ" class="w-full h-auto object-contain rounded-xl">
                 </div>
 
                 <!-- รายการกล่องสุ่มอิโมจิ -->
                 <div class="grid grid-cols-1 gap-2 pt-1">
-                    <div onclick="copyText('EMJ / กล่องสุ่ม A 45.-', this)" class="virtual-card bg-[#F9F1DB] border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
-                        <span class="font-bold text-[#AF877A] text-sm">EMJ / กล่องสุ่ม A</span>
-                        <span class="bg-[#EFCBD2] text-[#EF98B4] font-bold px-3 py-1 rounded-xl text-xs border border-[#EF98B4] flex items-center gap-1">
-                            45.- <span class="text-[10px] font-normal opacity-90">(จิ้มคัดลอก)</span>
+                    <div onclick="copyText('EMJ / กล่องสุ่ม A 45.-', this)" class="virtual-card bg-white/90 border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
+                        <span class="font-bold text-brown-500 text-sm">EMJ / กล่องสุ่ม A</span>
+                        <span class="bg-[#EFCBD2]/40 text-pink-500 font-bold px-3 py-1 rounded-xl text-xs border border-[#EFCBD2] flex items-center gap-1">
+                            45.- <span class="text-[10px] font-normal opacity-75">(จิ้มคัดลอก)</span>
                         </span>
                     </div>
 
-                    <div onclick="copyText('EMJ / กล่องสุ่ม B 49.-', this)" class="virtual-card bg-[#F9F1DB] border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
-                        <span class="font-bold text-[#AF877A] text-sm">EMJ / กล่องสุ่ม B</span>
-                        <span class="bg-[#EFCBD2] text-[#EF98B4] font-bold px-3 py-1 rounded-xl text-xs border border-[#EF98B4] flex items-center gap-1">
-                            49.- <span class="text-[10px] font-normal opacity-90">(จิ้มคัดลอก)</span>
+                    <div onclick="copyText('EMJ / กล่องสุ่ม B 49.-', this)" class="virtual-card bg-white/90 border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
+                        <span class="font-bold text-brown-500 text-sm">EMJ / กล่องสุ่ม B</span>
+                        <span class="bg-[#EFCBD2]/40 text-pink-500 font-bold px-3 py-1 rounded-xl text-xs border border-[#EFCBD2] flex items-center gap-1">
+                            49.- <span class="text-[10px] font-normal opacity-75">(จิ้มคัดลอก)</span>
                         </span>
                     </div>
 
-                    <div onclick="copyText('EMJ / กล่องสุ่ม C 75.-', this)" class="virtual-card bg-[#F9F1DB] border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
-                        <span class="font-bold text-[#AF877A] text-sm">EMJ / กล่องสุ่ม C</span>
-                        <span class="bg-[#EFCBD2] text-[#EF98B4] font-bold px-3 py-1 rounded-xl text-xs border border-[#EF98B4] flex items-center gap-1">
-                            75.- <span class="text-[10px] font-normal opacity-90">(จิ้มคัดลอก)</span>
+                    <div onclick="copyText('EMJ / กล่องสุ่ม C 75.-', this)" class="virtual-card bg-white/90 border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
+                        <span class="font-bold text-brown-500 text-sm">EMJ / กล่องสุ่ม C</span>
+                        <span class="bg-[#EFCBD2]/40 text-pink-500 font-bold px-3 py-1 rounded-xl text-xs border border-[#EFCBD2] flex items-center gap-1">
+                            75.- <span class="text-[10px] font-normal opacity-75">(จิ้มคัดลอก)</span>
                         </span>
                     </div>
 
-                    <div onclick="copyText('EMJ / กล่องสุ่ม D 99.-', this)" class="virtual-card bg-[#F9F1DB] border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
-                        <span class="font-bold text-[#AF877A] text-sm">EMJ / กล่องสุ่ม D</span>
-                        <span class="bg-[#EFCBD2] text-[#EF98B4] font-bold px-3 py-1 rounded-xl text-xs border border-[#EF98B4] flex items-center gap-1">
-                            99.- <span class="text-[10px] font-normal opacity-90">(จิ้มคัดลอก)</span>
+                    <div onclick="copyText('EMJ / กล่องสุ่ม D 99.-', this)" class="virtual-card bg-white/90 border border-[#EFCBD2] p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
+                        <span class="font-bold text-brown-500 text-sm">EMJ / กล่องสุ่ม D</span>
+                        <span class="bg-[#EFCBD2]/40 text-pink-500 font-bold px-3 py-1 rounded-xl text-xs border border-[#EFCBD2] flex items-center gap-1">
+                            99.- <span class="text-[10px] font-normal opacity-75">(จิ้มคัดลอก)</span>
                         </span>
                     </div>
                 </div>
 
-                <p class="text-center text-[11.5px] text-[#AF877A] pt-1">หลังจากชำระยอดการสั่งซื้อ รอรับกล่องสุ่ม 5-15 น. ค่า</p>
+                <p class="text-center text-[11.5px] text-brown-400 pt-1">หลังจากชำระยอดการสั่งซื้อ รอรับกล่องสุ่ม 5-15 น. </p>
             </div>
 
             <!-- ติดปัญหา - สอบถาม -->
-            <div class="bg-[#C8E0DA]/70 border-2 border-[#C8E0DA] rounded-2xl p-3.5 text-center space-y-1 shadow-sm">
-                <p class="text-xs font-bold text-[#AF877A]">ติดปัญหา - สอบถามเพิ่มเติม</p>
-                <p class="text-[#EF98B4] font-bold text-sm tracking-wide">LINE : @346xodww</p>
+            <div class="bg-[#C8E0DA]/40 border border-[#C8E0DA] rounded-2xl p-3.5 text-center space-y-1">
+                <p class="text-xs font-bold text-brown-500">ติดปัญหา - สอบถามเพิ่มเติม</p>
+                <p class="text-pink-500 font-bold text-sm tracking-wide">LINE : @346xodww</p>
             </div>
 
         </div>
@@ -246,9 +279,9 @@
                 document.execCommand('copy');
                 showToast();
                 
-                containerElement.classList.add('bg-[#EF98B4]/20', 'border-[#EF98B4]');
+                containerElement.classList.add('bg-[#EFCBD2]/40', 'border-[#EF98B4]');
                 setTimeout(() => {
-                    containerElement.classList.remove('bg-[#EF98B4]/20', 'border-[#EF98B4]');
+                    containerElement.classList.remove('bg-[#EFCBD2]/40', 'border-[#EF98B4]');
                 }, 1000);
 
             } catch (err) {
