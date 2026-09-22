@@ -27,7 +27,6 @@
             0%, 100% { transform: scale(1); opacity: 0.8; }
             50% { transform: scale(1.1); opacity: 1; }
         }
-        @keyframes spin-slow { 100% { transform: rotate(360deg); } }
 
         .anim-float-1 { animation: float-up-down 4s ease-in-out infinite; }
         .anim-float-2 { animation: float-up-down 5s ease-in-out infinite 1.5s; }
@@ -111,7 +110,7 @@
     <div class="max-w-[420px] w-full relative z-10 space-y-5 pb-10">
         
         <!-- Header -->
-        <div class="text-center pt-2 pb-2 relative">
+        <div class="text-center pt-2 pb-1 relative">
             <h1 class="text-2xl font-bold tracking-tight text-pink-500 flex items-center justify-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-pink-400 anim-pulse">
                     <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
@@ -121,7 +120,14 @@
                     <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
                 </svg>
             </h1>
-            <p class="text-sm font-medium text-brown-400 mt-1">กล่องสุ่มปริศนา ? ราคาถู๊กถูก คุ้มสุดๆ</p>
+            <p class="text-sm font-medium text-brown-400 mt-0.5">กล่องสุ่มปริศนา ? ราคาถู๊กถูก คุ้มสุดๆ</p>
+        </div>
+
+        <!-- ภาพแรกล่างชื่อร้าน (จากลิงก์ที่ 1) -->
+        <div class="w-full px-1">
+            <div class="w-full h-44 rounded-[28px] overflow-hidden bg-white/80 p-2 border border-pink-200 shadow-sm">
+                <img src="https://lh3.googleusercontent.com/d/1LAdROryQK2yEXfi7TSG1leMqhLNepXm3" alt="Banner ร้าน" class="w-full h-full object-cover rounded-2xl">
+            </div>
         </div>
 
         <!-- Glass Card Container -->
@@ -154,16 +160,14 @@
                     </h3>
                 </div>
 
-                <!-- กรอบแสดงภาพตัวอย่างหมวดที่ 1 -->
+                <!-- ภาพที่ 2 สำหรับหมวดนี้ (จากลิงก์ที่ 2) -->
                 <div class="w-full bg-white/80 p-2 rounded-2xl border border-pink-200 shadow-sm text-center">
                     <div class="w-full h-40 rounded-xl overflow-hidden bg-pink-50 flex items-center justify-center relative border border-pink-100">
-                        <!-- แทนที่ src="ลิงก์รูปภาพของคุณ" ด้วยลิงก์รูปจริง หรือไฟล์รูปภาพในเครื่องได้เลย -->
-                        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500&auto=format&fit=crop&q=60" alt="ตัวอย่างสติกเกอร์และธีม" class="w-full h-full object-cover">
-                        <span class="absolute bottom-2 bg-black/50 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm">ภาพตัวอย่างสินค้า</span>
+                        <img src="https://lh3.googleusercontent.com/d/1FK7Va-IT2D1qxLMyEQxTdU4Jbcu5ozX2" alt="ภาพตัวอย่างสติกเกอร์และธีม" class="w-full h-full object-cover">
                     </div>
                 </div>
 
-                <!-- รายการกล่องสุ่ม (คลิกคัดลอกได้) -->
+                <!-- รายการกล่องสุ่ม -->
                 <div class="grid grid-cols-1 gap-2 pt-1">
                     <div onclick="copyText('STK / กล่องสุ่ม A 49.-', this)" class="virtual-card bg-white/90 border border-pink-100 p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
                         <span class="font-bold text-brown-600 text-sm">STK / กล่องสุ่ม A</span>
@@ -209,16 +213,14 @@
                     </h3>
                 </div>
 
-                <!-- กรอบแสดงภาพตัวอย่างหมวดที่ 2 -->
+                <!-- ภาพที่ 3 สำหรับหมวดนี้ (จากลิงก์ที่ 3) -->
                 <div class="w-full bg-white/80 p-2 rounded-2xl border border-pink-200 shadow-sm text-center">
                     <div class="w-full h-40 rounded-xl overflow-hidden bg-pink-50 flex items-center justify-center relative border border-pink-100">
-                        <!-- เปลี่ยนลิงก์รูปภาพตรง src เป็นรูปของหมวดอิโมจิได้เลยค่ะ -->
-                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&auto=format&fit=crop&q=60" alt="ตัวอย่างอิโมจิ" class="w-full h-full object-cover">
-                        <span class="absolute bottom-2 bg-black/50 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm">ภาพตัวอย่างสินค้า</span>
+                        <img src="https://lh3.googleusercontent.com/d/12HnV1tJ0uVQ_zxdgQPJncUSJZVeqTE27" alt="ภาพตัวอย่างอิโมจิ" class="w-full h-full object-cover">
                     </div>
                 </div>
 
-                <!-- รายการกล่องสุ่มอิโมจิ (คลิกคัดลอกได้) -->
+                <!-- รายการกล่องสุ่มอิโมจิ -->
                 <div class="grid grid-cols-1 gap-2 pt-1">
                     <div onclick="copyText('EMJ / กล่องสุ่ม A 45.-', this)" class="virtual-card bg-white/90 border border-pink-100 p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
                         <span class="font-bold text-brown-600 text-sm">EMJ / กล่องสุ่ม A</span>
@@ -278,9 +280,7 @@
                 document.execCommand('copy');
                 showToast();
                 
-                const originalBg = containerElement.style.backgroundColor;
                 containerElement.classList.add('bg-pink-50', 'border-pink-300');
-                
                 setTimeout(() => {
                     containerElement.classList.remove('bg-pink-50', 'border-pink-300');
                 }, 1000);
