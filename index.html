@@ -29,20 +29,11 @@
         }
         @keyframes spin-slow { 100% { transform: rotate(360deg); } }
 
-        @keyframes dash-animation {
-            from { stroke-dashoffset: 0; }
-            to { stroke-dashoffset: -24; }
-        }
-        .animate-dash {
-            animation: dash-animation 1s linear infinite;
-        }
-
         .anim-float-1 { animation: float-up-down 4s ease-in-out infinite; }
         .anim-float-2 { animation: float-up-down 5s ease-in-out infinite 1.5s; }
         .anim-float-3 { animation: float-left-right 6s ease-in-out infinite; }
         .anim-float-4 { animation: float-left-right 4.5s ease-in-out infinite 2s; }
         .anim-pulse { animation: pulse-soft 3s ease-in-out infinite; }
-        .anim-spin { animation: spin-slow 8s linear infinite; }
 
         .glass-card {
             background: rgba(255, 255, 255, 0.85);
@@ -104,14 +95,8 @@
     <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <svg class="absolute top-[5%] left-[10%] w-8 h-8 text-pink-300 anim-float-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
         <svg class="absolute top-[15%] left-[2%] w-6 h-6 text-white/60 anim-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <svg class="absolute top-[8%] left-[25%] w-4 h-4 text-pink-400/50 anim-float-3" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
         <svg class="absolute top-[10%] right-[8%] w-10 h-10 text-pink-200 anim-float-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <svg class="absolute top-[2%] right-[20%] w-5 h-5 text-white/80 anim-float-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-        <svg class="absolute top-[40%] -left-2 w-12 h-12 text-pink-100 anim-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <svg class="absolute top-[50%] right-[2%] w-6 h-6 text-pink-300 anim-float-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
         <svg class="absolute bottom-[10%] left-[10%] w-8 h-8 text-pink-200 anim-float-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <svg class="absolute bottom-[5%] right-[15%] w-7 h-7 text-white/70 anim-float-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-        <svg class="absolute bottom-[20%] right-[5%] w-4 h-4 text-pink-400/40 anim-pulse" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
     </div>
 
     <!-- Toast Notification -->
@@ -142,10 +127,6 @@
         <!-- Glass Card Container -->
         <div class="glass-card rounded-[40px] p-4 relative z-10 space-y-6">
             
-            <!-- ตกแต่ง SVG บนการ์ด -->
-            <svg class="absolute -top-4 -left-2 w-9 h-9 text-pink-300 anim-float-1 z-20 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            <svg class="absolute top-[25%] -right-3 w-7 h-7 text-pink-200 anim-float-2 z-20 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-
             <!-- กล่องสำคัญควรอ่าน -->
             <div class="relative bg-gradient-to-br from-pink-100/90 to-pink-50/90 rounded-[24px] p-4 border-2 border-dashed border-pink-300 shadow-sm overflow-hidden">
                 <div class="flex items-start gap-3 relative z-10">
@@ -159,7 +140,7 @@
                             สำคัญควรอ่าน (อ่านให้ครบ)
                         </span>
                         <p class="font-bold text-pink-500 mt-1">ยอมรับกฎและการสุ่ม = ชำระยอด</p>
-                        <p class="text-brown-500 mt-0.5 text-[11.5kpx]">หากไม่ชอบความเสี่ยงหรือการสุ่ม ห้ามสั่งซื้อรายการนี้!</p>
+                        <p class="text-brown-500 mt-0.5 text-[11.5px]">หากไม่ชอบความเสี่ยงหรือการสุ่ม ห้ามสั่งซื้อรายการนี้!</p>
                     </div>
                 </div>
             </div>
@@ -171,13 +152,19 @@
                         <svg class="w-4 h-4 text-pink-400 anim-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                         หมวดสติกเกอร์ / ธีม / เมโลดี้
                     </h3>
-                    <a href="https://drive.google.com/file/d/1FK7Va-IT2D1qxLMyEQxTdU4Jbcu5ozX2/view?usp=drivesdk" target="_blank" class="text-[11px] font-medium text-pink-500 bg-pink-50 hover:bg-pink-100 px-2.5 py-1 rounded-full border border-pink-200 transition-colors flex items-center gap-1">
-                        ดูตัวอย่างภาพ 📷
-                    </a>
+                </div>
+
+                <!-- กรอบแสดงภาพตัวอย่างหมวดที่ 1 -->
+                <div class="w-full bg-white/80 p-2 rounded-2xl border border-pink-200 shadow-sm text-center">
+                    <div class="w-full h-40 rounded-xl overflow-hidden bg-pink-50 flex items-center justify-center relative border border-pink-100">
+                        <!-- แทนที่ src="ลิงก์รูปภาพของคุณ" ด้วยลิงก์รูปจริง หรือไฟล์รูปภาพในเครื่องได้เลย -->
+                        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500&auto=format&fit=crop&q=60" alt="ตัวอย่างสติกเกอร์และธีม" class="w-full h-full object-cover">
+                        <span class="absolute bottom-2 bg-black/50 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm">ภาพตัวอย่างสินค้า</span>
+                    </div>
                 </div>
 
                 <!-- รายการกล่องสุ่ม (คลิกคัดลอกได้) -->
-                <div class="grid grid-cols-1 gap-2">
+                <div class="grid grid-cols-1 gap-2 pt-1">
                     <div onclick="copyText('STK / กล่องสุ่ม A 49.-', this)" class="virtual-card bg-white/90 border border-pink-100 p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
                         <span class="font-bold text-brown-600 text-sm">STK / กล่องสุ่ม A</span>
                         <span class="bg-pink-50 text-pink-500 font-bold px-3 py-1 rounded-xl text-xs border border-pink-100 flex items-center gap-1">
@@ -220,13 +207,19 @@
                         <svg class="w-4 h-4 text-pink-400 anim-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                         หมวดอิโมจิคู่กับอะไรดี ?
                     </h3>
-                    <a href="https://drive.google.com/file/d/12HnV1tJ0uVQ_zxdgQPJncUSJZVeqTE27/view?usp=drivesdk" target="_blank" class="text-[11px] font-medium text-pink-500 bg-pink-50 hover:bg-pink-100 px-2.5 py-1 rounded-full border border-pink-200 transition-colors flex items-center gap-1">
-                        ดูตัวอย่างภาพ 📷
-                    </a>
+                </div>
+
+                <!-- กรอบแสดงภาพตัวอย่างหมวดที่ 2 -->
+                <div class="w-full bg-white/80 p-2 rounded-2xl border border-pink-200 shadow-sm text-center">
+                    <div class="w-full h-40 rounded-xl overflow-hidden bg-pink-50 flex items-center justify-center relative border border-pink-100">
+                        <!-- เปลี่ยนลิงก์รูปภาพตรง src เป็นรูปของหมวดอิโมจิได้เลยค่ะ -->
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&auto=format&fit=crop&q=60" alt="ตัวอย่างอิโมจิ" class="w-full h-full object-cover">
+                        <span class="absolute bottom-2 bg-black/50 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm">ภาพตัวอย่างสินค้า</span>
+                    </div>
                 </div>
 
                 <!-- รายการกล่องสุ่มอิโมจิ (คลิกคัดลอกได้) -->
-                <div class="grid grid-cols-1 gap-2">
+                <div class="grid grid-cols-1 gap-2 pt-1">
                     <div onclick="copyText('EMJ / กล่องสุ่ม A 45.-', this)" class="virtual-card bg-white/90 border border-pink-100 p-3 rounded-2xl flex justify-between items-center cursor-pointer shadow-sm">
                         <span class="font-bold text-brown-600 text-sm">EMJ / กล่องสุ่ม A</span>
                         <span class="bg-pink-50 text-pink-500 font-bold px-3 py-1 rounded-xl text-xs border border-pink-100 flex items-center gap-1">
@@ -285,7 +278,6 @@
                 document.execCommand('copy');
                 showToast();
                 
-                // เอฟเฟกต์เปลี่ยนสีการ์ดชั่วคราวเมื่อกดสำเร็จ
                 const originalBg = containerElement.style.backgroundColor;
                 containerElement.classList.add('bg-pink-50', 'border-pink-300');
                 
